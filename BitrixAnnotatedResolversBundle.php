@@ -2,6 +2,8 @@
 
 namespace Prokl\BitrixAnnotatedResolversBundle;
 
+use LogicException;
+use Prokl\AnnotatedParamResolverBundle\AnnotatedParamResolverBundle;
 use Prokl\BitrixAnnotatedResolversBundle\DependencyInjection\BitrixAnnotatedResolversExtension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -23,5 +25,19 @@ final class BitrixAnnotatedResolversBundle extends Bundle
         }
 
         return $this->extension;
+    }
+
+    /**
+     * @inheritDoc
+     * @throws LogicException
+     */
+    public function boot() : void
+    {
+        parent::boot();
+        if (!class_exists(AnnotatedParamResolverBundle::class)) {
+            throw new LogicException(
+                'Этот бандл работает только вместе с AnnotatedParamResolverBundle.'
+            );
+        }
     }
 }
