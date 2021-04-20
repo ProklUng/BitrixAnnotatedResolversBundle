@@ -1,0 +1,24 @@
+services:
+  # конфигурация по умолчанию в *этом* файле
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  # Bitrix file.
+  bitrix_annotated_resolvers.bitrix_file:
+    class: Prokl\BitrixAnnotatedResolversBundle\ArgumentsResolver\BitrixFileArgumentResolver
+    arguments:
+      - '@annotations.cached_reader'
+      - '@Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver'
+    tags:
+      - { name: controller.argument_value_resolver, priority: 1500 }
+
+  # Bitrix file url.
+  bitrix_annotated_resolvers.bitrix_file_url:
+    class: Prokl\BitrixAnnotatedResolversBundle\ArgumentsResolver\BitrixFileUrlArgumentResolver
+    arguments:
+      - '@annotations.cached_reader'
+      - '@Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver'
+    tags:
+      - { name: controller.argument_value_resolver, priority: 1500 }
