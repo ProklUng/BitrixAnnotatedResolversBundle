@@ -20,18 +20,18 @@ class SampleControllerBitrixFileUrl extends AbstractController
      *
      * Параметры аннотации необязательны!
      *
-     * @param BitrixFileParam $file
+     * @param string $file
      * @return JsonResponse $content
      * @BitrixFileUrl(
      *    var="file"
      * )
      */
     public function action(
-        BitrixFileParam $file
+        string $file
     ): JsonResponse {
 
         return new JsonResponse([
-            'url' => $file->url()
+            'url' => $file
         ]);
     }
 }
