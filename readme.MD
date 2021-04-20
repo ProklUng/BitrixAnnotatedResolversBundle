@@ -36,9 +36,10 @@ class SampleControllerBitrixFile extends AbstractController
 
 2) **BitrixFileUrl**
  
+В action контроллера будет лежать URL файла.
+
 ~~~php
 use Prokl\BitrixAnnotatedResolversBundle\Annotation\BitrixFileUrl;
-use Prokl\BitrixAnnotatedResolversBundle\ArgumentsResolver\Services\BitrixFileParam;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -47,18 +48,18 @@ class SampleControllerBitrixFileUrl extends AbstractController
     /**
      * Параметры аннотации необязательны!
      *
-     * @param BitrixFileParam $file
+     * @param string $fileUrl
      * @return JsonResponse $content
      * @BitrixFileUrl(
-     *    var="file"
+     *    var="$fileUrl"
      * )
      */
     public function action(
-        BitrixFileParam $file
+        string $fileUrl
     ): JsonResponse {
 
         return new JsonResponse([
-            'url' => $file
+            'url' => $fileUrl
         ]);
     }
 }
