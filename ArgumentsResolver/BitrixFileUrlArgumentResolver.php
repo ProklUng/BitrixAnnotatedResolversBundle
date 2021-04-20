@@ -6,6 +6,7 @@ use Doctrine\Common\Annotations\Reader;
 use Prokl\BitrixAnnotatedResolversBundle\Annotation\BitrixFileUrl;
 use Prokl\BitrixAnnotatedResolversBundle\ArgumentsResolver\Services\BitrixFileParam;
 use Prokl\AnnotatedParamResolverBundle\ArgumentResolver\Traits\ArgumentResolverTrait;
+use Prokl\BitrixAnnotatedResolversBundle\Exceptions\BitrixFileNotFoundException;
 use ReflectionException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ArgumentValueResolverInterface;
@@ -76,7 +77,7 @@ final class BitrixFileUrlArgumentResolver implements ArgumentValueResolverInterf
     /**
      * @inheritDoc
      * @throws ReflectionException Ошибки рефлексии.
-     * @throws Exceptions\BitrixFileNotFoundException
+     * @throws BitrixFileNotFoundException
      */
     public function resolve(Request $request, ArgumentMetadata $argument)
     {

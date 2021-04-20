@@ -36,7 +36,7 @@ class BitrixFileUrlArgumentResolverTest extends BaseTestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->obTestObject = static::$testContainer->get('custom_arguments_resolvers.bitrix_file_url');
+        $this->obTestObject = static::$testContainer->get('bitrix_annotated_resolvers.bitrix_file_url');
     }
 
     /**
@@ -51,7 +51,7 @@ class BitrixFileUrlArgumentResolverTest extends BaseTestCase
             $this->controllerClass,
             [
                 'file' => 27,
-            ],
+            ]
         );
 
         $result = $this->obTestObject->supports(
