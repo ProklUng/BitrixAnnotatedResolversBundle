@@ -1,6 +1,7 @@
 # Битриксовые конвертеры для бандла AnnotatedParamResolverBundle
 
-Конверторы для бандла [https://github.com/ProklUng/AnnotatedParamResolverBundle](AnnotatedParamResolverBundle):
+Конверторы для бандла [https://github.com/ProklUng/AnnotatedParamResolverBundle](AnnotatedParamResolverBundle), без 
+него он не имеет смысла, да и не запустится:
 
 1) **BitrixFile**
 
