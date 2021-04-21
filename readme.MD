@@ -5,7 +5,8 @@
 
 1) **BitrixFile**
 
-В action контроллера будет лежать массив, идентичный тому, что отдает CFile::GetFileArray.
+В action контроллера, при запросе вида /route?file=7; где 7 - битриксовый ID файла, будет лежать массив,
+идентичный тому, что отдает CFile::GetFileArray.
 
 ~~~php
 use Prokl\BitrixAnnotatedResolversBundle\Annotation\BitrixFile;
@@ -37,7 +38,7 @@ class SampleControllerBitrixFile extends AbstractController
 
 2) **BitrixFileUrl**
  
-В action контроллера будет лежать URL файла.
+В action контроллера будет лежать URL файла при запросе вида /route?file=7. Где 7 - битриксовый ID файла.
 
 ~~~php
 use Prokl\BitrixAnnotatedResolversBundle\Annotation\BitrixFileUrl;
@@ -49,18 +50,18 @@ class SampleControllerBitrixFileUrl extends AbstractController
     /**
      * Параметры аннотации необязательны!
      *
-     * @param string $fileUrl
+     * @param string $file
      * @return JsonResponse $content
      * @BitrixFileUrl(
-     *    var="$fileUrl"
+     *    var="file"
      * )
      */
     public function action(
-        string $fileUrl
+        string $file
     ): JsonResponse {
 
         return new JsonResponse([
-            'url' => $fileUrl
+            'url' => $file
         ]);
     }
 }
