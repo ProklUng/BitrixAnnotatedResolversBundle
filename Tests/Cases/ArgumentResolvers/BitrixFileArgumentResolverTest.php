@@ -7,7 +7,7 @@ use Prokl\BitrixAnnotatedResolversBundle\ArgumentsResolver\BitrixFileArgumentRes
 use Prokl\BitrixAnnotatedResolversBundle\Tests\Cases\ArgumentResolvers\Tools\SampleControllerBitrixFile;
 use Prokl\BitrixAnnotatedResolversBundle\Tests\Cases\ArgumentResolvers\Traits\ArgumentResolverTrait;
 use Prokl\BitrixAnnotatedResolversBundle\Tests\Samples\SampleControllerArguments;
-use Prokl\BitrixAnnotatedResolversBundle\Tests\Tools\BaseTestCase;
+use Prokl\TestingTools\Base\BaseTestCase;
 
 /**
  * Class BitrixFileArgumentResolverTest
