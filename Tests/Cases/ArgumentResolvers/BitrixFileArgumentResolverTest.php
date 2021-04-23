@@ -7,7 +7,7 @@ use Prokl\BitrixAnnotatedResolversBundle\ArgumentsResolver\BitrixFileArgumentRes
 use Prokl\BitrixAnnotatedResolversBundle\Tests\Cases\ArgumentResolvers\Tools\SampleControllerBitrixFile;
 use Prokl\BitrixAnnotatedResolversBundle\Tests\Cases\ArgumentResolvers\Traits\ArgumentResolverTrait;
 use Prokl\BitrixAnnotatedResolversBundle\Tests\Samples\SampleControllerArguments;
-use Prokl\TestingTools\Base\BaseTestCase;
+use Prokl\BitrixAnnotatedResolversBundle\Tests\Tools\ContainerAwareBaseTestCase;
 
 /**
  * Class BitrixFileArgumentResolverTest
@@ -16,7 +16,7 @@ use Prokl\TestingTools\Base\BaseTestCase;
  *
  * @since 03.04.2021
  */
-class BitrixFileArgumentResolverTest extends BaseTestCase
+class BitrixFileArgumentResolverTest extends ContainerAwareBaseTestCase
 {
     use ArgumentResolverTrait;
 
