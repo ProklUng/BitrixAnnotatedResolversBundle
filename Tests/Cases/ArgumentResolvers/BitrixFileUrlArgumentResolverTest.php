@@ -7,7 +7,7 @@ use Prokl\BitrixAnnotatedResolversBundle\ArgumentsResolver\BitrixFileUrlArgument
 use Prokl\BitrixAnnotatedResolversBundle\Tests\Cases\ArgumentResolvers\Tools\SampleControllerBitrixFileUrl;
 use Prokl\BitrixAnnotatedResolversBundle\Tests\Cases\ArgumentResolvers\Traits\ArgumentResolverTrait;
 use Prokl\BitrixAnnotatedResolversBundle\Tests\Samples\SampleControllerArguments;
-use Prokl\TestingTools\Base\BaseTestCase;
+use Prokl\BitrixAnnotatedResolversBundle\Tests\Tools\ContainerAwareBaseTestCase;
 
 /**
  * Class BitrixFileUrlArgumentResolverTest
@@ -16,7 +16,7 @@ use Prokl\TestingTools\Base\BaseTestCase;
  *
  * @since 03.04.2021
  */
-class BitrixFileUrlArgumentResolverTest extends BaseTestCase
+class BitrixFileUrlArgumentResolverTest extends ContainerAwareBaseTestCase
 {
     use ArgumentResolverTrait;
 
