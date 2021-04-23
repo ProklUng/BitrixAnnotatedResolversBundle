@@ -10,6 +10,7 @@ services:
     public: true
 
   Symfony\Component\HttpKernel\Controller\ControllerResolver: ~
+  Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver: ~
 
   property_info:
     class: Symfony\Component\PropertyInfo\PropertyInfoExtractor

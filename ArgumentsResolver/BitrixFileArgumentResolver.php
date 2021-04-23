@@ -4,9 +4,9 @@ namespace Prokl\BitrixAnnotatedResolversBundle\ArgumentsResolver;
 
 use Doctrine\Common\Annotations\Reader;
 use Prokl\BitrixAnnotatedResolversBundle\Annotation\BitrixFile;
+use Prokl\BitrixAnnotatedResolversBundle\ArgumentsResolver\Traits\ArgumentResolverTrait;
 use Prokl\BitrixAnnotatedResolversBundle\Exceptions\BitrixFileNotFoundException;
 use Prokl\BitrixAnnotatedResolversBundle\Services\BitrixFileParam;
-use Prokl\BitrixAnnotatedResolversBundle\Tests\Cases\ArgumentResolvers\Traits\ArgumentResolverTrait;
 use ReflectionException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ArgumentValueResolverInterface;

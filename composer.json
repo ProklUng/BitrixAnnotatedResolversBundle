@@ -29,7 +29,8 @@
         "symfony/http-kernel": "^4.0 || ^5.0",
         "symfony/config": "~4|~5",
         "symfony/framework-bundle": "^4.0 || ^5.0",
-        "doctrine/annotations": "^1.10"
+        "doctrine/annotations": "^1.10",
+        "doctrine/cache": "^1.10"
     },
     "require-dev": {
         "symfony/serializer": "^4.0 || ^5.0",

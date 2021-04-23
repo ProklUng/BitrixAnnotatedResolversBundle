@@ -23,6 +23,7 @@ class ContainerAwareBaseTestCase extends BaseTestCase
         $this->container = static::$testContainer = BuildContainer::getTestContainer(
             [
                 'dev/test_container.yaml',
+                'annotations.yaml',
                 'resolvers.yaml',
                 'dev/local.yaml'
             ],
