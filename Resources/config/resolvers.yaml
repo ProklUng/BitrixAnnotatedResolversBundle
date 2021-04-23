@@ -9,7 +9,7 @@ services:
   bitrix_annotated_resolvers.bitrix_file:
     class: Prokl\BitrixAnnotatedResolversBundle\ArgumentsResolver\BitrixFileArgumentResolver
     arguments:
-      - '@annotations.cached_reader'
+      - '@bitrix_annotated_bundle_resolvers.annotations.cached_reader'
       - '@Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver'
     tags:
       - { name: controller.argument_value_resolver, priority: 1500 }
@@ -18,7 +18,7 @@ services:
   bitrix_annotated_resolvers.bitrix_file_url:
     class: Prokl\BitrixAnnotatedResolversBundle\ArgumentsResolver\BitrixFileUrlArgumentResolver
     arguments:
-      - '@annotations.cached_reader'
+      - '@bitrix_annotated_bundle_resolvers.annotations.cached_reader'
       - '@Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver'
     tags:
       - { name: controller.argument_value_resolver, priority: 1500 }

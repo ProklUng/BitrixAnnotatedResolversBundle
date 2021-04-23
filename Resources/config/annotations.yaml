@@ -1,0 +1,38 @@
+parameters:
+  bitrix_annotated_bundle_resolvers.cache_path: '%kernel.cache_dir%/annotations'
+  annotations.cache_ttl_default: 3600
+services:
+  # конфигурация по умолчанию в *этом* файле
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  bitrix_annotated_bundle_resolvers.annotations.dummy_registry:
+    class: Doctrine\Common\Annotations\AnnotationRegistry
+    calls:
+      - registerUniqueLoader: ['class_exists']
+
+  bitrix_annotated_bundle_resolvers.annotations.reader:
+    class: Doctrine\Common\Annotations\AnnotationReader
+    calls:
+      - addGlobalIgnoredName: ['required', '@bitrix_annotated_bundle_resolvers.annotations.dummy_registry']
+
+  bitrix_annotated_bundle_resolvers.filesystem_cache_adapter:
+    class: Symfony\Component\Cache\Adapter\FilesystemAdapter
+    arguments:
+      - 'annotations'
+      - '%annotations.cache_ttl_default%'
+      - '%bitrix_annotated_bundle_resolvers.cache_path%'
+
+  bitrix_annotated_bundle_resolvers.annotations.filesystem_cache:
+    class: Symfony\Component\Cache\DoctrineProvider
+    arguments:
+      - '@bitrix_annotated_bundle_resolvers.filesystem_cache_adapter'
+
+  bitrix_annotated_bundle_resolvers.annotations.cached_reader:
+    class: Doctrine\Common\Annotations\CachedReader
+    arguments:
+      - '@bitrix_annotated_bundle_resolvers.annotations.reader'
+      - '@bitrix_annotated_bundle_resolvers.annotations.filesystem_cache'
+      - '%kernel.debug%'

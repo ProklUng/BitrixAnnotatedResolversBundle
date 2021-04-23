@@ -29,6 +29,7 @@ class BitrixAnnotatedResolversExtension extends Extension
             new FileLocator(__DIR__ . self::DIR_CONFIG)
         );
 
+        $loader->load('annotations.yaml');
         $loader->load('resolvers.yaml');
     }
 
