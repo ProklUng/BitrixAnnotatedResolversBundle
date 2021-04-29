@@ -3,6 +3,7 @@
 namespace Prokl\BitrixAnnotatedResolversBundle\Exceptions;
 
 use Symfony\Component\HttpFoundation\Exception\RequestExceptionInterface;
+use Prokl\BaseException\BaseException;
 
 /**
  * Class BitrixFileNotFoundException
