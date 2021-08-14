@@ -10,7 +10,7 @@ use Prokl\BitrixAnnotatedResolversBundle\Exceptions\BitrixFileNotFoundException;
 use ReflectionException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ArgumentValueResolverInterface;
-use Symfony\Component\HttpKernel\Controller\ControllerResolver;
+use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
 use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
 
 /**
@@ -36,19 +36,19 @@ final class BitrixFileUrlArgumentResolver implements ArgumentValueResolverInterf
     private $reader;
 
     /**
-     * @var ControllerResolver $controllerResolver Controller Resolver.
+     * @var ControllerResolverInterface $controllerResolver Controller Resolver.
      */
     private $controllerResolver;
 
     /**
      * BitrixFileArgumentResolver constructor.
      *
-     * @param Reader             $reader             Читатель аннотаций.
-     * @param ControllerResolver $controllerResolver Controller Resolver.
+     * @param Reader                      $reader             Читатель аннотаций.
+     * @param ControllerResolverInterface $controllerResolver Controller Resolver.
      */
     public function __construct(
         Reader $reader,
-        ControllerResolver $controllerResolver
+        ControllerResolverInterface $controllerResolver
     ) {
         $this->reader = $reader;
         $this->controllerResolver = $controllerResolver;
